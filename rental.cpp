@@ -14,3 +14,4 @@ struct motor
     int total;
     motor *next;
 };
+
