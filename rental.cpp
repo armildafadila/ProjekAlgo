@@ -199,6 +199,21 @@ void kembaliMotor(){
     cout << "Motor tidak ditemukan!\n";
 }
 
+//TAMPIL DATA
+void tampil(){
+    motor* bantu = head;
+
+    cout << "============================================" << endl;
+    cout << "                 DATA MOTOR                 " << endl;
+    cout << "============================================" << endl;
+    
+    while (bantu != NULL){
+        cout << bantu->namaMtr << "|" <<bantu->plat << "|" << bantu->tahun << "|" << bantu->harga << "|" << bantu->status << "|" << bantu->penyewa << "|" << bantu->total << endl;
+
+        bantu = bantu->next;
+    }   
+}
+
 int main() {
     loadfile();
 
