@@ -359,20 +359,18 @@ int main() {
     int subpilih;
 
     do{
-        cout << "========================================="<< endl;
-        cout << "| NO |     SISTEM ADMIN SEWA MOTOR      |"<< endl;
-        cout << "========================================="<< endl;
-        cout << "| 1  | Kelola Data Motor                |"<< endl;
-        cout << "| 2  | Transaksi Sewa Motor             |"<< endl;
-        cout << "| 3  | Pencarian Data Motor             |"<< endl;
-        cout << "| 4  | Urutkan Data Motor               |"<< endl;
-        cout << "| 5  | Tampilkan Semua Data Motor       |"<< endl;
-        cout << "| 6  | Keluar                           |"<< endl;
-        cout << "========================================="<< endl;
-        cout << "|Pilih Menu:                            |";
+        cout << "=========================================" << endl;
+        cout << "| NO |     SISTEM ADMIN SEWA MOTOR      |" << endl;
+        cout << "=========================================" << endl;
+        cout << "| 1  | Kelola Data Motor                |" << endl;
+        cout << "| 2  | Transaksi Sewa Motor             |" << endl;
+        cout << "| 3  | Pencarian Data Motor             |" << endl;
+        cout << "| 4  | Urutkan Data Motor               |" << endl;
+        cout << "| 5  | Tampilkan Semua Data Motor       |" << endl;
+        cout << "| 6  | Keluar                           |" << endl;
+        cout << "=========================================" << endl;
+        cout << "| Pilih Menu: ";
         cin >> pilih;
-        
-        cout << "========================================="<< endl;
         cout << endl;
 
         switch (pilih)
@@ -383,10 +381,10 @@ int main() {
                 cout << "========================================="<< endl;
                 cout << "|            KELOLA DATA MOTOR          |"<< endl;
                 cout << "========================================="<< endl;
-                
-                cout << "1. Tambah Data Motor" << endl;
-                cout << "2. Hapus Data Motor" << endl;
-                cout << "3. Kembali ke Menu Utama" << endl;
+                cout << "| 1.| Tambah Data Motor                 |" << endl;
+                cout << "| 2.| Hapus Data Motor                  |" << endl;
+                cout << "| 3.| Kembali ke Menu Utama             |" << endl;
+                cout << "========================================="<< endl;
                 cout << "Pilih Sub Menu: ";
                 cin >> subpilih;
                 switch (subpilih)
@@ -411,11 +409,12 @@ int main() {
         subpilih = 0;
             do{ 
                 cout << "============================"<< endl;
-                cout << "     TRANSAKSI SEWA MOTOR   " << endl;
+                cout << "|   TRANSAKSI SEWA MOTOR   |" << endl;
                 cout << "============================"<< endl;
-                cout << "1. Sewa Motor" << endl;
-                cout << "2. Kembalikan Motor" << endl;
-                cout << "3. Kembali ke Menu Utama" << endl;
+                cout << "| 1.| Sewa Motor           |" << endl;
+                cout << "| 2.| Kembalikan Motor     |" << endl;
+                cout << "| 3.| Kembali ke Menu Utama|" << endl;
+                cout << "============================"<< endl;
                 cout << "Pilih Sub Menu: ";
                 cin >> subpilih;
 
