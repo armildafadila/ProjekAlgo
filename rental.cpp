@@ -221,7 +221,7 @@ void cariNama(){
             cout << "Tahun   : " << bantu->tahun << endl;
             cout << "Harga   : " << bantu->harga << endl;
             cout << "Status  : " << bantu->status << endl;
-            cout << "Penyewa : " << bantu->status << endl;
+            cout << "Penyewa : " << bantu->penyewa << endl;
             cout << "Total   : " << bantu->total << endl;
             cout << "=======================================\n";
             return;
@@ -287,6 +287,70 @@ void tampil(){
     }
     cout << "===========================================================================" << endl;   
 }
+
+// SWAP ITU UNTUK MENUKAR
+void swapData(motor* a, motor* b){
+    char tmpstr[60];
+    int tmpint;
+
+    // tukar semua field string
+    strcpy(tmpstr, a->namaMtr); strcpy(a->namaMtr, b->namaMtr); strcpy(b->namaMtr, tmpstr);
+    strcpy(tmpstr, a->plat); strcpy(a->plat, b->plat); strcpy(b->plat, tmpstr);
+    strcpy(tmpstr, a->status); strcpy(a->status, b->status); strcpy(b->status, tmpstr);
+    strcpy(tmpstr, a->penyewa); strcpy(a->penyewa, b->penyewa); strcpy(b->penyewa, tmpstr);
+
+    // tukar semua field angka
+    tmpint = a->tahun; a->tahun = b->tahun; b->tahun = tmpint;
+    tmpint = a->harga; a->harga = b->harga; b->harga = tmpint;
+    tmpint = a->total; a->total = b->total; b->total = tmpint;
+}
+
+// urutkan harga dari yang paling murah
+void urutHarga(){
+    if (head == NULL || head->next == NULL) return;
+
+    bool tukar;
+    do {
+        tukar = false;
+        motor* skrg = head;
+
+        while (skrg->next != NULL){
+            // [i] badingkan node sekarang degan node berikutnya
+            if (skrg->harga > skrg->next->harga){
+                // [ii] kalau harga sekarang lebih besar -> tukar
+                swapData(skrg, skrg->next);
+                tukar = true;
+            }
+            skrg = skrg->next;
+        }
+    } while (tukar);
+    tampil();
+    simpanFile();
+}
+
+// urutkan plat A-Z
+void urutPlat(){
+    if(head == NULL || head->next == NULL) return;
+
+    bool tukar;
+    do {
+        tukar = false;
+        motor* skrg = head;
+
+        while (skrg->next != NULL){
+            if (strcmp(skrg->plat, skrg->next->plat) > 0) {
+                swapData(skrg, skrg->next);
+                tukar = true;
+            }
+            skrg = skrg->next;
+        }
+    } while (tukar);
+    
+    cout << "Data berhasil di urutkan" << endl;
+    tampil();
+    simpanFile();
+}
+
 
 int main() {
     loadfile();
