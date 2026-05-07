@@ -242,9 +242,25 @@ void cariPlat(){
     //sequential search
     while (bantu != NULL){
 
+        if(strcmp(bantu->plat, cari) == 0){
+
+            cout << "\nMotor Berhasil Ditemukan!\n";
+            cout << "======================================\n";
+            cout << "Nama    : " << bantu->namaMtr << endl;
+            cout << "Plat    : " << bantu->plat << endl;
+            cout << "Tahun   : " << bantu->tahun << endl;
+            cout << "Harga   : " << bantu->harga << endl;
+            cout << "Status  : " << bantu->status << endl;
+            cout << "Penyewa : " << bantu->status << endl;
+            cout << "Total   : " << bantu->total << endl;
+            cout << "=======================================\n";
+            return;
+        }
+
+        bantu = bantu->next;
     }
-    
-    
+
+    cout << "Motor Tidak Ditemukan!\n";
 
 }
 
