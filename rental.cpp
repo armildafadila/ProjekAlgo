@@ -387,13 +387,12 @@ int main() {
                 switch (subpilih)
                 {
                 case 1:
-                    //berdasarkan nama
+                    cariNama();
                     break;
                 case 2:
-                    //berdasarkan plat
+                    cariPlat();
                     break;
                 case 3:
-                    //kembali ke menu utama
                     break;
                 default:
                     cout << "Pilihan tidak valid" << endl;
@@ -418,7 +417,7 @@ int main() {
                 switch (subpilih)
                 {
                 case 1:
-                    /* code */
+                    
                     break;
                 case 2:
 
