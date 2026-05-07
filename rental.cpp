@@ -295,17 +295,16 @@ int main() {
     int subpilih;
 
     do{
-        cout << "==============================="<< endl;
-        cout << "   SISTEM ADMIN SEWA MOTOR   "<< endl;
-        cout << "==============================="<< endl;
-
-        cout << " 1. Kelola Data Motor" << endl;
-        cout << " 2. Transaksi Sewa Motor" << endl;
-        cout << " 3. Pencarian Data Motor" << endl;
-        cout << " 4. Urutkan Data Motor" << endl;
-        cout << " 5. Tampilkan Semua Data Motor" << endl;
-        cout << " 6. Keluar" << endl;
-        cout << "==============================="<< endl;
+        cout << "========================================="<< endl;
+        cout << "| NO |       SISTEM ADMIN SEWA MOTOR    |"<< endl;
+        cout << "========================================="<< endl;
+        cout << "| 1  | Kelola Data Motor                |"<< endl;
+        cout << "| 2  | Transaksi Sewa Motor             |"<< endl;
+        cout << "| 3  | Pencarian Data Motor             |"<< endl;
+        cout << "| 4  | Urutkan Data Motor               |"<< endl;
+        cout << "| 5  | Tampilkan Semua Data Motor        |"<< endl;
+        cout << "| 6  | Keluar                           |"<< endl;
+        cout << "=========================================2"<< endl;
         cout << "Pilih Menu: ";
         cin >> pilih;
         cout << endl;
