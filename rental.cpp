@@ -176,7 +176,7 @@ void sewaMotor() {
     cout << "Motor tidak ditemukan!\n";
 }
 
-//KEMBALI
+//Fungsi KEMBALI
 void kembaliMotor(){
     char namaCari[50];
     cout << "Nama Motor: " << endl ;
