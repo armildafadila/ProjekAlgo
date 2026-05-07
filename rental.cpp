@@ -255,7 +255,7 @@ void cariPlat(){
             cout << "Tahun   : " << bantu->tahun << endl;
             cout << "Harga   : " << bantu->harga << endl;
             cout << "Status  : " << bantu->status << endl;
-            cout << "Penyewa : " << bantu->status << endl;
+            cout << "Penyewa : " << bantu->penyewa << endl;
             cout << "Total   : " << bantu->total << endl;
             cout << "=======================================\n";
             return;
@@ -487,10 +487,10 @@ int main() {
                 switch (subpilih)
                 {
                 case 1:
-                    
+                    urutHarga();
                     break;
                 case 2:
-
+                    urutPlat();
                     break;
 
                 case 3:
