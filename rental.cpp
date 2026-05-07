@@ -233,6 +233,23 @@ void cariNama(){
     cout << "Motor Tidak Ditemukan!\n";
 }
 
+void cariPlat(){
+    char cari[20];
+
+    cout << "Masukan plat nomer : ";
+    cin >> cari;
+
+    motor* bantu = head;
+
+    //sequential search
+    while (bantu != NULL){
+
+    }
+    
+    
+
+}
+
 //TAMPIL DATA
 void tampil(){
     if (head == NULL) {
