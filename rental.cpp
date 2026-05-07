@@ -46,7 +46,7 @@ void loadfile() {
         motor* baru = new motor; //node baru
 
         if (fscanf(fp, "%[^;];%[^;];%d;%d;%[^;];%[^;];%d\n",
-            baru->namaMtr, baru->plat, &baru->tahun, &baru->harga, baru->status, baru->penyewa, &baru->total)== EOF)
+            baru->namaMtr, baru->plat, &baru->tahun, &baru->harga, baru->status, baru->penyewa, &baru->total) != 7)
             {
                 delete baru;
                 break;
@@ -72,8 +72,8 @@ void tambahData(){
     motor* baru = new motor;
 
     cout << "Nama Motor : "; 
-    cin.ignore();
-    cin.getline(baru->namaMtr, 80);
+    cin.ignore(1000, '\n');
+    cin.getline(baru->namaMtr, 50);
     cout << "Plat : ";
     cin >> baru->plat;
     cout << "Tahun : ";
@@ -100,24 +100,25 @@ void tambahData(){
     }
     cout << "Data berhasil ditambahkan! \n";
     simpanFile(); // langsung simpan ke file
+    cin.ignore(1000, '\n');
 }
 
 void hapusData(){
-    char hapus[60];
+    char hapus[15];
 
     cout << "=============================" << endl;
     cout << "      HAPUS DATA MOTOR       " << endl;
     cout << "=============================" << endl;
-    cout << "Data motor yang ingin di hapus : ";
+    cout << "Plat motor yang ingin di hapus : ";
     cin.ignore(1000, '\n');
-    cin.getline(hapus, 60);
+    cin.getline(hapus, 15);
 
     motor *bantu = head;
     motor *prev = NULL;
 
     while (bantu != NULL)
     {
-        if(strcmp(bantu->namaMtr, hapus) == 0){
+        if(strcmp(bantu->plat, hapus) == 0){
             if (prev == NULL)
                 head = bantu->next;
             else
@@ -134,12 +135,13 @@ void hapusData(){
     cout << "Data tidak ada" << endl;
 }
 
-//SEWA
+//SEWA Motor
 void sewaMotor() {
     char key[50];
     int hari;
-    cout << "\nNama Motor: ";
-    cin >> key;
+    cout << "Nama Motor: " << endl;
+    cin.ignore(1000, '\n');
+    cin.getline(key, 50);
 
     motor* bantu = head;
 
@@ -174,11 +176,12 @@ void sewaMotor() {
     cout << "Motor tidak ditemukan!\n";
 }
 
-//KEMBALI
+//Fungsi KEMBALI
 void kembaliMotor(){
     char namaCari[50];
-    cout << "\nNama Motor: ";
-    cin >> namaCari;
+    cout << "Nama Motor: " << endl ;
+    cin.ignore();
+    cin.getline(namaCari, 50);
 
     motor* bantu = head;
 
@@ -195,7 +198,6 @@ void kembaliMotor(){
         }
         bantu = bantu->next;
     }
-
     cout << "Motor tidak ditemukan!\n";
 }
 
@@ -266,17 +268,24 @@ void cariPlat(){
 
 //TAMPIL DATA
 void tampil(){
+    if (head == NULL) {
+            cout << "Belum ada data motor" << endl;
+            return;
+    }
+
     motor* bantu = head;
 
-    cout << "============================================" << endl;
-    cout << "                 DATA MOTOR                 " << endl;
-    cout << "============================================" << endl;
+    cout << "===========================================================================" << endl;
+    cout << "NO | NAMA MOTOR          | PLAT     | TAHUN        | HARGA       | STATUS " << endl;
+    cout << "===========================================================================" << endl;
     
+    int no = 1;
     while (bantu != NULL){
-        cout << bantu->namaMtr << "|" <<bantu->plat << "|" << bantu->tahun << "|" << bantu->harga << "|" << bantu->status << "|" << bantu->penyewa << "|" << bantu->total << endl;
-
+        printf("%-3d| %-17s| %-8s| %-6d| %-9d| %s\n", 
+            no++, bantu->namaMtr, bantu->plat, bantu->tahun, bantu->harga, bantu->status);
         bantu = bantu->next;
-    }   
+    }
+    cout << "===========================================================================" << endl;   
 }
 
 int main() {
@@ -348,10 +357,10 @@ int main() {
                 switch (subpilih)
                 {
                 case 1:
-                    // Sewa Motor
+                    sewaMotor();
                     break;
                 case 2:
-                    // Kembalikan Motor
+                    kembaliMotor();
                     break;
                 case 3:
                     // Kembali ke Menu Utama
@@ -428,7 +437,7 @@ int main() {
 
         case 5 :  
             cout << "DATA MOTOR SAAT INI" << endl;
-            // Tampilkan Semua Data
+            tampil();
         break;
         case 6 :  
             cout << "Terima kasih telah menggunakan sistem admin sewa motor!" << endl;
