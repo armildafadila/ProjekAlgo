@@ -134,6 +134,46 @@ void hapusData(){
     cout << "Data tidak ada" << endl;
 }
 
+//SEWA
+void sewaMotor() {
+    char key[50];
+    int hari;
+    cout << "\nNama Motor: ";
+    cin >> key;
+
+    motor* bantu = head;
+
+    while (bantu != NULL){
+        if(strcmp(bantu->namaMtr, key) == 0){
+
+
+            if(strcmp(bantu->status, "disewa") == 0){
+                cout << "Motor sudah disewa!\n";
+                return;
+            }
+
+            cout << "Harga: " << bantu->harga << endl;
+
+            cout << "Nama Penyewa: ";
+            cin >> bantu->penyewa;
+
+            cout << "Lama Sewa: ";
+            cin >> hari;
+
+            bantu->total = bantu->harga * hari;
+            strcpy(bantu->status, "disewa");
+
+            cout << "Total: " << bantu->total << endl;
+            simpanFile();
+            return; 
+        }
+
+        bantu = bantu->next;
+    }
+
+    cout << "Motor tidak ditemukan!\n";
+
+}
 
 int main() {
     loadfile();
