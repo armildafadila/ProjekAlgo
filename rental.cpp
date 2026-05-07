@@ -305,8 +305,10 @@ int main() {
         cout << "| 5  | Tampilkan Semua Data Motor       |"<< endl;
         cout << "| 6  | Keluar                           |"<< endl;
         cout << "========================================="<< endl;
-        cout << "Pilih Menu: ";
+        cout << "|Pilih Menu:                            |";
         cin >> pilih;
+        
+        cout << "========================================="<< endl;
         cout << endl;
 
         switch (pilih)
@@ -314,9 +316,9 @@ int main() {
         case 1 :  
         subpilih = 0;
             do{
-                cout << "============================"<< endl;
-                cout << "     KELOLA DATA MOTOR      " << endl;
-                cout << "============================"<< endl;
+                cout << "========================================="<< endl;
+                cout << "|            KELOLA DATA MOTOR          |"<< endl;
+                cout << "========================================="<< endl;
                 
                 cout << "1. Tambah Data Motor" << endl;
                 cout << "2. Hapus Data Motor" << endl;
