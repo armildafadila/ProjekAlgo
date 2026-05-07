@@ -284,7 +284,7 @@ void tampil(){
     int no = 1;
 
     while (bantu != NULL){
-        printf("| %-2d | %-16s | %-10s | %-6d | %-8d | %-11s    |\n", 
+        printf("| %-2d | %-16s | %-10s | %-6d | %-8d | %-11s  |\n", 
             no++, bantu->namaMtr, bantu->plat, bantu->tahun, bantu->harga, bantu->status);
 
         bantu = bantu->next;
@@ -328,6 +328,7 @@ void urutHarga(){
             skrg = skrg->next;
         }
     } while (tukar);
+    cout << "Data berhasil diurutkan berdasarkan harga!\n";
     tampil();
     simpanFile();
 }
@@ -350,7 +351,7 @@ void urutPlat(){
         }
     } while (tukar);
     
-    cout << "Data berhasil di urutkan" << endl;
+    cout << "Data berhasil di urutkan berdasarkan plat!" << endl;
     tampil();
     simpanFile();
 }
