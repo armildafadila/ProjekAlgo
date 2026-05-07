@@ -67,6 +67,41 @@ void loadfile() {
     fclose(fp);
 }
 
+//TAMBAH DATA
+void tambahData(){
+    motor* baru = new motor;
+
+    cout << "Nama Motor : "; 
+    cin.ignore();
+    cin.getline(baru->namaMtr, 80);
+    cout << "Plat : ";
+    cin >> baru->plat;
+    cout << "Tahun : ";
+    cin >> baru->tahun;
+    cout << "Harga(/hari) : ";
+    cin >> baru->harga;
+
+    //defaultnya yang tampil
+    strcpy(baru->status, "tersedia"); 
+    strcpy(baru->penyewa, "-");
+    baru->total = 0;
+    baru->next = NULL;
+
+    //data baaru ditaruh di node terakhir//sisip akhir
+    if(head == NULL){ // klo belum ada data
+        head = baru; // brt jadiin data pertama atau baru
+
+    } else {
+        motor* bantu = head;
+        while (bantu->next != NULL){
+            bantu = bantu->next;
+        }
+        bantu->next = baru;
+    }
+    cout << "Data berhasil ditambahkan! \n";
+    simpanFile(); // langsung simpan ke file
+}
+
 int main() {
     loadfile();
 
@@ -109,7 +144,7 @@ int main() {
                     tambahData();
                     break;
                 case 2:
-                    hapusData();
+                
                     break;
                 case 3:
                     // Kembali ke Menu Utama
