@@ -172,7 +172,31 @@ void sewaMotor() {
     }
 
     cout << "Motor tidak ditemukan!\n";
+}
 
+//KEMBALI
+void kembaliMotor(){
+    char namaCari[50];
+    cout << "\nNama Motor: ";
+    cin >> namaCari;
+
+    motor* bantu = head;
+
+    while (bantu != NULL) {
+        if (strcmp(bantu->namaMtr, namaCari) == 0){
+
+            strcpy(bantu->status, "tersedia");
+            strcpy(bantu->penyewa, "-");
+            bantu->total = 0;
+
+            cout << "Motor Berhasil dikembalikan!\n";
+            simpanFile();
+            return;
+        }
+        bantu = bantu->next;
+    }
+
+    cout << "Motor tidak ditemukan!\n";
 }
 
 int main() {
