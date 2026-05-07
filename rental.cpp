@@ -17,7 +17,7 @@ struct motor
 
 motor *head = NULL;
 
-//void simpanfilegdswytd
+//void simpanfile
 void simpanFile(){
     FILE *fp = fopen("rentalMotor.txt", "w");
 
@@ -102,6 +102,39 @@ void tambahData(){
     simpanFile(); // langsung simpan ke file
 }
 
+void hapusData(){
+    char hapus[60];
+
+    cout << "=============================" << endl;
+    cout << "      HAPUS DATA MOTOR       " << endl;
+    cout << "=============================" << endl;
+    cout << "Data motor yang ingin di hapus : ";
+    cin.ignore(1000, '\n');
+    cin.getline(hapus, 60);
+
+    motor *bantu = head;
+    motor *prev = NULL;
+
+    while (bantu != NULL)
+    {
+        if(strcmp(bantu->namaMtr, hapus) == 0){
+            if (prev == NULL)
+                head = bantu->next;
+            else
+                prev->next = bantu->next;
+            
+            delete bantu;
+            cout << "Data Berhasil dihapus" << endl;
+            simpanFile();
+            return;
+        }
+        prev = bantu;
+        bantu = bantu->next;
+    }
+    cout << "Data tidak ada" << endl;
+}
+
+
 int main() {
     loadfile();
 
@@ -144,7 +177,7 @@ int main() {
                     tambahData();
                     break;
                 case 2:
-                
+                    hapusData();
                     break;
                 case 3:
                     // Kembali ke Menu Utama
