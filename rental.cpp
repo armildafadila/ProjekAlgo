@@ -17,7 +17,7 @@ struct motor
 
 motor *head = NULL;
 
-//void simpanfile
+//void simpanfilegdswytd
 void simpanFile(){
     FILE *fp = fopen("rentalMotor.txt", "w");
 
