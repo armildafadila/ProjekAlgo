@@ -201,6 +201,38 @@ void kembaliMotor(){
     cout << "Motor tidak ditemukan!\n";
 }
 
+void cariNama(){
+    char cari[50];
+
+    cout << "Masukkan Nama Motor : ";
+    cin.ignore(1000, '\n');
+    cin.getline(cari, 50);
+
+    motor* bantu = head;
+
+    //sequential search
+    while (bantu != NULL) {
+        if(strcmp(bantu->namaMtr, cari) == 0){
+
+            cout << "\nMotor Berhasil Ditemukan!\n";
+            cout << "======================================\n";
+            cout << "Nama    : " << bantu->namaMtr << endl;
+            cout << "Plat    : " << bantu->plat << endl;
+            cout << "Tahun   : " << bantu->tahun << endl;
+            cout << "Harga   : " << bantu->harga << endl;
+            cout << "Status  : " << bantu->status << endl;
+            cout << "Penyewa : " << bantu->status << endl;
+            cout << "Total   : " << bantu->total << endl;
+            cout << "=======================================\n";
+            return;
+
+        }
+        bantu = bantu->next;
+    }
+
+    cout << "Motor Tidak Ditemukan!\n";
+}
+
 //TAMPIL DATA
 void tampil(){
     if (head == NULL) {
