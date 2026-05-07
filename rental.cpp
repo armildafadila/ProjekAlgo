@@ -135,7 +135,7 @@ void hapusData(){
     cout << "Data tidak ada" << endl;
 }
 
-//SEWA
+//SEWA Motor
 void sewaMotor() {
     char key[50];
     int hari;
