@@ -78,6 +78,8 @@ void tambahData(){
     motor* baru = new motor;
 
     cout << "-----------------------------------------"<< endl;
+    cout << "|           TAMBAH DATA MOTOR           |"<< endl;
+    cout << "-----------------------------------------"<< endl;
     cout << "Nama Motor                 : "; 
     cin.ignore(1000, '\n');
     cin.getline(baru->namaMtr, 50);
@@ -106,7 +108,8 @@ void tambahData(){
         }
         bantu->next = baru;
     }
-    cout << "Data berhasil ditambahkan! \n";
+    cout << "Data berhasil ditambahkan! " << endl;
+    cout << endl;
     simpanFile(); // langsung simpan ke file
     cin.ignore(1000, '\n');
 }
@@ -114,10 +117,11 @@ void tambahData(){
 void hapusData(){
     char hapus[15];
 
-    cout << "==============================" << endl;
-    cout << "|      HAPUS DATA MOTOR      |" << endl;
-    cout << "==============================" << endl;
-    cout << "| Plat motor yang akan di hapus (ABXXXXCD) : ";
+    cout << "-----------------------------------------"<< endl;
+    cout << "|            HAPUS DATA MOTOR           |"<< endl;
+    cout << "-----------------------------------------"<< endl;
+    cout << "| Harap masukkan plat motor yang akan di hapus di bawah ini" << endl;
+    cout << "| Plat motor (ABXXXXCD) : ";
     cin.ignore(1000, '\n');
     cin.getline(hapus, 15);
 
@@ -133,7 +137,10 @@ void hapusData(){
                 prev->next = bantu->next;
             
             delete bantu;
+            
+            cout << "------------------------------" << endl;
             cout << "Data Berhasil dihapus" << endl;
+            cout << endl;
             simpanFile();
             return;
         }
@@ -437,6 +444,7 @@ int main() {
                 case 3:
                     // Kembali ke Menu Utama
                     break;
+                    cout << endl;
                 default:
                     cout << "Pilihan tidak valid!" << endl;
                     break;
