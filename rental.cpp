@@ -418,6 +418,7 @@ int main() {
                     break;
                 }
             }while(subpilih != 3);
+            cout << endl;
         break;
         
         case 2 :  
@@ -450,6 +451,7 @@ int main() {
                     break;
                 }
             }while(subpilih != 3);
+            cout << endl;
         break;
 
         case 3 :
@@ -479,6 +481,7 @@ int main() {
                     break;
                 }
         }while (subpilih != 3);
+        cout << endl;
         break;
 
         case 4 :
@@ -511,18 +514,22 @@ int main() {
                     cout << "Pilihan Tidak Valid" << endl;
                     break;
                 }
-        }while(subpilih != 3);  
+        }while(subpilih != 3);
+        cout << endl;
         break;
 
         case 5 :  
             cout << "DATA MOTOR SAAT INI" << endl;
             tampil();
+            cout << endl;
         break;
         case 6 :  
             cout << "Terima kasih telah menggunakan sistem admin sewa motor!" << endl;
+            cout << endl;
         break;
         default:
             cout << "Pilihan tidak valid!" << endl;
+            cout << endl;
         break;
         }
 
