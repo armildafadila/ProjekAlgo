@@ -325,17 +325,17 @@ void tampil(){
 
     motor* bantu = head;
 
-    cout << "-----------------------------------------------------------------------------" << endl;
-    cout << "| NO | NAMA MOTOR          | PLAT     | TAHUN        | HARGA       | STATUS |" << endl;
-    cout << "-----------------------------------------------------------------------------" << endl;
+    cout << "---------------------------------------------------------------------------------" << endl;
+    cout << "| NO | NAMA MOTOR          | PLAT     | TAHUN        | HARGA       |   STATUS   |" << endl;
+    cout << "---------------------------------------------------------------------------------" << endl;
     
     int no = 1;
     while (bantu != NULL){
-        printf("%-3d| %-17s| %-8s| %-6d| %-9d| %s\n", 
+        printf("| %-3d| %-20s| %-9s| %-13d| %-12d| %-11s|\n", 
             no++, bantu->namaMtr, bantu->plat, bantu->tahun, bantu->harga, bantu->status);
         bantu = bantu->next;
     }
-    cout << "-----------------------------------------------------------------------------" << endl;
+    cout << "---------------------------------------------------------------------------------" << endl;
     cout << endl;
 
 }
@@ -376,6 +376,9 @@ void urutHarga(){
             skrg = skrg->next;
         }
     } while (tukar);
+
+    cout << "---------------------------------------------------------------------------------" << endl;
+    cout << "|                         DATA URUT DARI HARGA TERENDAH                         |" << endl;
     tampil();
     simpanFile();
 }
@@ -398,7 +401,8 @@ void urutPlat(){
         }
     } while (tukar);
     
-    cout << "Data berhasil di urutkan" << endl;
+    cout << "---------------------------------------------------------------------------------" << endl;
+    cout << "|                         DATA URUT DARI PLAT TERKECIL                          |" << endl;
     tampil();
     simpanFile();
 }
@@ -553,7 +557,8 @@ int main() {
         break;
 
         case 5 :  
-            cout << "DATA MOTOR SAAT INI" << endl;
+            cout << "---------------------------------------------------------------------------------" << endl;
+            cout << "|                              DATA MOTOR SAAT INI                              |" << endl;
             tampil();
             cout << endl;
         break;
