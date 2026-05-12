@@ -114,10 +114,10 @@ void tambahData(){
 void hapusData(){
     char hapus[15];
 
-    cout << "=============================" << endl;
-    cout << "      HAPUS DATA MOTOR       " << endl;
-    cout << "=============================" << endl;
-    cout << "Plat motor yang ingin di hapus : ";
+    cout << "==============================" << endl;
+    cout << "|      HAPUS DATA MOTOR      |" << endl;
+    cout << "==============================" << endl;
+    cout << "| Plat motor yang akan di hapus (ABXXXXCD) : ";
     cin.ignore(1000, '\n');
     cin.getline(hapus, 15);
 
