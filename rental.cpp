@@ -71,12 +71,13 @@ void loadfile() {
 void tambahData(){
     motor* baru = new motor;
 
-    cout << "Nama Motor : "; 
+    cout << endl;
+    cout << "Nama Motor   : "; 
     cin.ignore(1000, '\n');
     cin.getline(baru->namaMtr, 50);
-    cout << "Plat : ";
+    cout << "Plat         : ";
     cin >> baru->plat;
-    cout << "Tahun : ";
+    cout << "Tahun        : ";
     cin >> baru->tahun;
     cout << "Harga(/hari) : ";
     cin >> baru->harga;
@@ -101,6 +102,7 @@ void tambahData(){
     cout << "Data berhasil ditambahkan! \n";
     simpanFile(); // langsung simpan ke file
     cin.ignore(1000, '\n');
+    cout << endl;
 }
 
 void hapusData(){
@@ -253,7 +255,7 @@ void cariPlat(){
             cout << "Tahun   : " << bantu->tahun << endl;
             cout << "Harga   : " << bantu->harga << endl;
             cout << "Status  : " << bantu->status << endl;
-            cout << "Penyewa : " << bantu->status << endl;
+            cout << "Penyewa : " << bantu->penyewa << endl;
             cout << "Total   : " << bantu->total << endl;
             cout << "=======================================\n";
             return;
@@ -276,13 +278,15 @@ void tampil(){
     motor* bantu = head;
 
     cout << "===========================================================================" << endl;
-    cout << "NO | NAMA MOTOR          | PLAT     | TAHUN        | HARGA       | STATUS " << endl;
+    cout << "|NO | NAMA MOTOR        | PLAT       | TAHUN  | HARGA    | STATUS         |" << endl;
     cout << "===========================================================================" << endl;
     
     int no = 1;
+
     while (bantu != NULL){
-        printf("%-3d| %-17s| %-8s| %-6d| %-9d| %s\n", 
+        printf("| %-2d | %-16s | %-10s | %-6d | %-8d | %-11s  |\n", 
             no++, bantu->namaMtr, bantu->plat, bantu->tahun, bantu->harga, bantu->status);
+
         bantu = bantu->next;
     }
     cout << "===========================================================================" << endl;   
@@ -324,6 +328,7 @@ void urutHarga(){
             skrg = skrg->next;
         }
     } while (tukar);
+    cout << "Data berhasil diurutkan berdasarkan harga!\n";
     tampil();
     simpanFile();
 }
@@ -346,7 +351,7 @@ void urutPlat(){
         }
     } while (tukar);
     
-    cout << "Data berhasil di urutkan" << endl;
+    cout << "Data berhasil di urutkan berdasarkan plat!" << endl;
     tampil();
     simpanFile();
 }
@@ -408,13 +413,13 @@ int main() {
         case 2 :  
         subpilih = 0;
             do{ 
-                cout << "============================"<< endl;
-                cout << "|   TRANSAKSI SEWA MOTOR   |" << endl;
-                cout << "============================"<< endl;
-                cout << "| 1.| Sewa Motor           |" << endl;
-                cout << "| 2.| Kembalikan Motor     |" << endl;
-                cout << "| 3.| Kembali ke Menu Utama|" << endl;
-                cout << "============================"<< endl;
+                cout << "========================================="<< endl;
+                cout << "|          TRANSAKSI SEWA MOTOR         |" << endl;
+                cout << "========================================="<< endl;
+                cout << "| 1.| Sewa Motor                        |" << endl;
+                cout << "| 2.| Kembalikan Motor                  |" << endl;
+                cout << "| 3.| Kembali ke Menu Utama             |" << endl;
+                cout << "========================================="<< endl;
                 cout << "Pilih Sub Menu: ";
                 cin >> subpilih;
 
@@ -439,12 +444,13 @@ int main() {
         case 3 :
         subpilih = 0;
         do{
-            cout << "============================"<< endl;
-            cout << "     PENCARIAN DATA MOTOR   " << endl;
-            cout << "============================"<< endl; 
-            cout << "1. Cari Berdasarkan Nama Motor" << endl;
-            cout << "2. Cari Berdasarkan Plat Nomor" << endl;
-            cout << "3. Kembali Ke Menu Utama" << endl;    
+            cout << "========================================="<< endl;
+            cout << "|           PENCARIAN DATA MOTOR        |" << endl;
+            cout << "========================================="<< endl; 
+            cout << "|1.| Cari Berdasarkan Nama Motor        |" << endl;
+            cout << "|2.|Cari Berdasarkan Plat Nomor         |" << endl;
+            cout << "|3.| Kembali Ke Menu Utama              |" << endl; 
+            cout << "========================================="<< endl;   
             cout << "Pilih Sub Menu: ";
             cin >> subpilih;
 
@@ -468,12 +474,13 @@ int main() {
         case 4 :
         subpilih = 0;
         do{
-            cout << "============================"<< endl;
-            cout << "     URUTKAN DATA MOTOR     " << endl;
-            cout << "============================"<< endl; 
-            cout << "1. Urutkan Berdasarkan Harga" << endl;
-            cout << "2. Urutkan Berdasarkan Nomor Plat" << endl;
-            cout << "3. Kembali Ke Menu Utama" << endl;    
+            cout << "========================================="<< endl;
+            cout << "|            URUTKAN DATA MOTOR         |" << endl;
+            cout << "========================================="<< endl; 
+            cout << "|1.| Urutkan Berdasarkan Harga          |" << endl;
+            cout << "|2.| Urutkan Berdasarkan Nomor Plat     |" << endl;
+            cout << "|3.| Kembali Ke Menu Utama              |" << endl;  
+            cout << "========================================="<< endl;  
             cout << "Pilih Sub Menu: ";
             cin >> subpilih;
 
@@ -481,10 +488,10 @@ int main() {
                 switch (subpilih)
                 {
                 case 1:
-                    
+                    urutHarga();
                     break;
                 case 2:
-
+                    urutPlat();
                     break;
 
                 case 3:
@@ -499,7 +506,9 @@ int main() {
         break;
 
         case 5 :  
-            cout << "DATA MOTOR SAAT INI" << endl;
+            cout << "===========================================================================" << endl;
+            cout << "|                         DATA MOTOR SAAT INI                             |" << endl;
+            cout << "===========================================================================" << endl;
             tampil();
         break;
         case 6 :  
