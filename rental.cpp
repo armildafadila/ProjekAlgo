@@ -393,15 +393,16 @@ int main() {
         case 1 :  
         subpilih = 0;
             do{
-                cout << "========================================="<< endl;
-                cout << "|           KELOLA DATA MOTOR           |"<< endl;
-                cout << "========================================="<< endl;
+                cout << "=========================================" << endl;
+                cout << "|           KELOLA DATA MOTOR           |" << endl;
+                cout << "=========================================" << endl;
                 cout << "| 1.| Tambah Data Motor                 |" << endl;
                 cout << "| 2.| Hapus Data Motor                  |" << endl;
                 cout << "| 3.| Kembali ke Menu Utama             |" << endl;
-                cout << "========================================="<< endl;
+                cout << "=========================================" << endl;
                 cout << "| Pilih Sub Menu: ";
                 cin >> subpilih;
+
                 switch (subpilih)
                 {
                 case 1:
@@ -424,14 +425,14 @@ int main() {
         case 2 :  
         subpilih = 0;
             do{ 
-                cout << "============================"<< endl;
-                cout << "|   TRANSAKSI SEWA MOTOR   |" << endl;
-                cout << "============================"<< endl;
-                cout << "| 1.| Sewa Motor           |" << endl;
-                cout << "| 2.| Kembalikan Motor     |" << endl;
-                cout << "| 3.| Kembali ke Menu Utama|" << endl;
-                cout << "============================"<< endl;
-                cout << "Pilih Sub Menu: ";
+                cout << "=========================================" << endl;
+                cout << "|          TRANSAKSI SEWA MOTOR         |" << endl;
+                cout << "=========================================" << endl;
+                cout << "| 1.| Sewa Motor                        |" << endl;
+                cout << "| 2.| Kembalikan Motor                  |" << endl;
+                cout << "| 3.| Kembali ke Menu Utama             |" << endl;
+                cout << "=========================================" << endl;
+                cout << "| Pilih Sub Menu: ";
                 cin >> subpilih;
 
                 switch (subpilih)
@@ -457,13 +458,14 @@ int main() {
         case 3 :
         subpilih = 0;
         do{
-            cout << "============================"<< endl;
-            cout << "     PENCARIAN DATA MOTOR   " << endl;
-            cout << "============================"<< endl; 
-            cout << "1. Cari Berdasarkan Nama Motor" << endl;
-            cout << "2. Cari Berdasarkan Plat Nomor" << endl;
-            cout << "3. Kembali Ke Menu Utama" << endl;    
-            cout << "Pilih Sub Menu: ";
+            cout << "=========================================" << endl;
+            cout << "|          PENCARIAN DATA MOTOR         |" << endl;
+            cout << "=========================================" << endl; 
+            cout << "| 1.| Cari Berdasarkan Nama Motor       |" << endl;
+            cout << "| 2.| Cari Berdasarkan Plat Nomor       |" << endl;
+            cout << "| 3.| Kembali Ke Menu Utama             |" << endl;
+            cout << "=========================================" << endl;    
+            cout << "| Pilih Sub Menu: ";
             cin >> subpilih;
 
                 switch (subpilih)
@@ -487,16 +489,16 @@ int main() {
         case 4 :
         subpilih = 0;
         do{
-            cout << "============================"<< endl;
-            cout << "     URUTKAN DATA MOTOR     " << endl;
-            cout << "============================"<< endl; 
-            cout << "1. Urutkan Berdasarkan Harga" << endl;
-            cout << "2. Urutkan Berdasarkan Nomor Plat" << endl;
-            cout << "3. Kembali Ke Menu Utama" << endl;    
-            cout << "Pilih Sub Menu: ";
+            cout << "=========================================" << endl;
+            cout << "|           URUTKAN DATA MOTOR          |" << endl;
+            cout << "=========================================" << endl;
+            cout << "| 1.| Urutkan Berdasarkan Harga         |" << endl;
+            cout << "| 2.| Urutkan Berdasarkan Nomor Plat    |" << endl;
+            cout << "| 3.| Kembali Ke Menu Utama             |" << endl;    
+            cout << "=========================================" << endl;
+            cout << "| Pilih Sub Menu: ";
             cin >> subpilih;
 
-            
                 switch (subpilih)
                 {
                 case 1:
