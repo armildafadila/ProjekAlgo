@@ -120,7 +120,7 @@ void hapusData(){
     cout << "-----------------------------------------"<< endl;
     cout << "|            HAPUS DATA MOTOR           |"<< endl;
     cout << "-----------------------------------------"<< endl;
-    cout << "| Harap masukkan plat motor yang akan di hapus di bawah ini" << endl;
+    cout << "| Masukkan Plat Nomer yang ingin dihapus" << endl;
     cout << "| Plat motor (ABXXXXCD) : ";
     cin.ignore(1000, '\n');
     cin.getline(hapus, 15);
