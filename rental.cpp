@@ -148,6 +148,7 @@ void hapusData(){
         bantu = bantu->next;
     }
     cout << "Data tidak ada" << endl;
+    cout << endl;
 }
 
 // BIAR KALAU INPUT HURUF BESAR KECIL TETEP BISA DAPET DATANYA
@@ -205,6 +206,7 @@ void sewaMotor() {
     }
 
     cout << "Motor tidak ditemukan!" << endl;
+    cout << endl;
 }
 
 //Fungsi KEMBALI
@@ -237,12 +239,16 @@ void kembaliMotor(){
         bantu = bantu->next;
     }
     cout << "Motor tidak ditemukan! " << endl;
+    cout << endl;
 }
 
 void cariNama(){
     char cari[50];
 
-    cout << "Masukkan Nama Motor : ";
+    cout << "-----------------------------------------" << endl;
+    cout << "|         CARI DENGAN NAMA MOTOR        |" << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "| Masukkan Nama Motor : ";
     cin.ignore(1000, '\n');
     cin.getline(cari, 50);
 
@@ -252,29 +258,34 @@ void cariNama(){
     while (bantu != NULL) {
         if(strcmpIgnoreCase(bantu->namaMtr, cari) == 0){
 
-            cout << "\nMotor Berhasil Ditemukan!\n";
-            cout << "======================================\n";
+            cout << "-----------------------------------------" << endl;
+            cout << "Motor Berhasil Ditemukan!"                 << endl;
+            cout << "-----------------------------------------" << endl;
             cout << "Nama    : " << bantu->namaMtr << endl;
-            cout << "Plat    : " << bantu->plat << endl;
-            cout << "Tahun   : " << bantu->tahun << endl;
-            cout << "Harga   : " << bantu->harga << endl;
-            cout << "Status  : " << bantu->status << endl;
+            cout << "Plat    : " << bantu->plat    << endl;
+            cout << "Tahun   : " << bantu->tahun   << endl;
+            cout << "Harga   : " << bantu->harga   << endl;
+            cout << "Status  : " << bantu->status  << endl;
             cout << "Penyewa : " << bantu->penyewa << endl;
-            cout << "Total   : " << bantu->total << endl;
-            cout << "=======================================\n";
+            cout << "Total   : " << bantu->total   << endl;
+            cout << "-----------------------------------------" << endl;
+            cout << endl;
             return;
-
         }
         bantu = bantu->next;
     }
 
-    cout << "Motor Tidak Ditemukan!\n";
+    cout << "Motor Tidak Ditemukan!" << endl;
+    cout << endl;
 }
 
 void cariPlat(){
     char cari[20];
 
-    cout << "Masukan plat nomer : ";
+    cout << "-----------------------------------------" << endl;
+    cout << "|         CARI DENGAN PLAT MOTOR        |" << endl;
+    cout << "-----------------------------------------" << endl;
+    cout << "| Masukan plat motor : ";
     cin >> cari;
 
     motor* bantu = head;
@@ -284,24 +295,25 @@ void cariPlat(){
 
         if(strcmpIgnoreCase(bantu->plat, cari) == 0){
 
-            cout << "\nMotor Berhasil Ditemukan!\n";
-            cout << "======================================\n";
+            cout << "-----------------------------------------" << endl;
+            cout << "Motor Berhasil Ditemukan!"                 << endl;
+            cout << "-----------------------------------------" << endl;
             cout << "Nama    : " << bantu->namaMtr << endl;
-            cout << "Plat    : " << bantu->plat << endl;
-            cout << "Tahun   : " << bantu->tahun << endl;
-            cout << "Harga   : " << bantu->harga << endl;
-            cout << "Status  : " << bantu->status << endl;
-            cout << "Penyewa : " << bantu->status << endl;
-            cout << "Total   : " << bantu->total << endl;
-            cout << "=======================================\n";
+            cout << "Plat    : " << bantu->plat    << endl;
+            cout << "Tahun   : " << bantu->tahun   << endl;
+            cout << "Harga   : " << bantu->harga   << endl;
+            cout << "Status  : " << bantu->status  << endl;
+            cout << "Penyewa : " << bantu->penyewa  << endl;
+            cout << "Total   : " << bantu->total   << endl;
+            cout << "-----------------------------------------" << endl;
+            cout << endl;
             return;
         }
-
         bantu = bantu->next;
     }
 
-    cout << "Motor Tidak Ditemukan!\n";
-
+    cout << "Motor Tidak Ditemukan!" << endl;
+    cout << endl;
 }
 
 //TAMPIL DATA
@@ -313,9 +325,9 @@ void tampil(){
 
     motor* bantu = head;
 
-    cout << "===========================================================================" << endl;
-    cout << "NO | NAMA MOTOR          | PLAT     | TAHUN        | HARGA       | STATUS " << endl;
-    cout << "===========================================================================" << endl;
+    cout << "-----------------------------------------------------------------------------" << endl;
+    cout << "| NO | NAMA MOTOR          | PLAT     | TAHUN        | HARGA       | STATUS |" << endl;
+    cout << "-----------------------------------------------------------------------------" << endl;
     
     int no = 1;
     while (bantu != NULL){
@@ -323,10 +335,12 @@ void tampil(){
             no++, bantu->namaMtr, bantu->plat, bantu->tahun, bantu->harga, bantu->status);
         bantu = bantu->next;
     }
-    cout << "===========================================================================" << endl;   
+    cout << "-----------------------------------------------------------------------------" << endl;
+    cout << endl;
+
 }
 
-// SWAP ITU UNTUK MENUKAR
+// SWAP UNTUK MENUKAR
 void swapData(motor* a, motor* b){
     char tmpstr[60];
     int tmpint;
@@ -523,15 +537,13 @@ int main() {
                 switch (subpilih)
                 {
                 case 1:
-                    
+                    urutHarga();
                     break;
                 case 2:
-
+                    urutPlat();
                     break;
-
                 case 3:
                     break;
-
                 default:
                     cout << "Pilihan Tidak Valid" << endl;
                     break;
