@@ -259,15 +259,15 @@ void cariNama(){
         if(strcmpIgnoreCase(bantu->namaMtr, cari) == 0){
 
             cout << "-----------------------------------------" << endl;
-            cout << "Motor Berhasil Ditemukan!"                 << endl;
+            cout << "|Motor Berhasil Ditemukan!"                 << endl;
             cout << "-----------------------------------------" << endl;
-            cout << "Nama    : " << bantu->namaMtr << endl;
-            cout << "Plat    : " << bantu->plat    << endl;
-            cout << "Tahun   : " << bantu->tahun   << endl;
-            cout << "Harga   : " << bantu->harga   << endl;
-            cout << "Status  : " << bantu->status  << endl;
-            cout << "Penyewa : " << bantu->penyewa << endl;
-            cout << "Total   : " << bantu->total   << endl;
+            cout << "|Nama    : " << bantu->namaMtr << endl;
+            cout << "|Plat    : " << bantu->plat    << endl;
+            cout << "|Tahun   : " << bantu->tahun   << endl;
+            cout << "|Harga   : " << bantu->harga   << endl;
+            cout << "|Status  : " << bantu->status  << endl;
+            cout << "|Penyewa : " << bantu->penyewa << endl;
+            cout << "|Total   : " << bantu->total   << endl;
             cout << "-----------------------------------------" << endl;
             cout << endl;
             return;
@@ -275,7 +275,7 @@ void cariNama(){
         bantu = bantu->next;
     }
 
-    cout << "Motor Tidak Ditemukan!" << endl;
+    cout << "|Motor Tidak Ditemukan!" << endl;
     cout << endl;
 }
 
