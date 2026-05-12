@@ -138,7 +138,7 @@ void hapusData(){
             
             delete bantu;
             
-            cout << "------------------------------" << endl;
+            cout << "-----------------------------------------"<< endl;
             cout << "Data Berhasil dihapus" << endl;
             cout << endl;
             simpanFile();
@@ -150,37 +150,53 @@ void hapusData(){
     cout << "Data tidak ada" << endl;
 }
 
+// BIAR KALAU INPUT HURUF BESAR KECIL TETEP BISA DAPET DATANYA
+// fungsi compare tidak peduli kapital
+int strcmpIgnoreCase(const char* a, const char* b) {
+    while (*a && *b) {
+        if (tolower(*a) != tolower(*b)) return 1;
+        a++; b++;
+    }
+    return tolower(*a) - tolower(*b);
+}
+
 //SEWA Motor
 void sewaMotor() {
     char key[50];
     int hari;
-    cout << "Nama Motor: " << endl;
+
+    cout << "-----------------------------------------"<< endl;
+    cout << "|               SEWA MOTOR              |"<< endl;
+    cout << "-----------------------------------------"<< endl;
+    cout << "| Nama Motor : ";
     cin.ignore(1000, '\n');
     cin.getline(key, 50);
 
     motor* bantu = head;
 
     while (bantu != NULL){
-        if(strcmp(bantu->namaMtr, key) == 0){
+        if(strcmpIgnoreCase(bantu->namaMtr, key) == 0){
 
 
             if(strcmp(bantu->status, "disewa") == 0){
                 cout << "Motor sudah disewa!\n";
                 return;
             }
-
-            cout << "Harga: " << bantu->harga << endl;
-
-            cout << "Nama Penyewa: ";
+            
+            cout << "-----------------------------------------"<< endl;
+            cout << "Harga                      : " << bantu->harga << endl;
+            cout << "Nama Penyewa               : ";
             cin >> bantu->penyewa;
-
-            cout << "Lama Sewa: ";
+            cout << "Lama Sewa (jml hari) ex: 2 : ";
             cin >> hari;
 
             bantu->total = bantu->harga * hari;
             strcpy(bantu->status, "disewa");
+            cout << "-----------------------------------------"<< endl;
+            cout << "TOTAL BIAYA                : " << bantu->total << endl;
+            cout << "Motor Berhasil Disewa, status berubah" << endl;
+            cout << endl;
 
-            cout << "Total: " << bantu->total << endl;
             simpanFile();
             return; 
         }
@@ -188,32 +204,39 @@ void sewaMotor() {
         bantu = bantu->next;
     }
 
-    cout << "Motor tidak ditemukan!\n";
+    cout << "Motor tidak ditemukan!" << endl;
 }
 
 //Fungsi KEMBALI
 void kembaliMotor(){
     char namaCari[50];
-    cout << "Nama Motor: " << endl ;
+
+    cout << "-----------------------------------------"<< endl;
+    cout << "|            KEMBALIKAN MOTOR           |"<< endl;
+    cout << "-----------------------------------------"<< endl;
+    cout << "| Nama Motor : " ;
     cin.ignore();
     cin.getline(namaCari, 50);
 
     motor* bantu = head;
 
     while (bantu != NULL) {
-        if (strcmp(bantu->namaMtr, namaCari) == 0){
+        if (strcmpIgnoreCase(bantu->namaMtr, namaCari) == 0){
 
             strcpy(bantu->status, "tersedia");
             strcpy(bantu->penyewa, "-");
             bantu->total = 0;
 
-            cout << "Motor Berhasil dikembalikan!\n";
+            cout << "-----------------------------------------"<< endl;
+            cout << "Motor Berhasil Dikembalikan, status berubah" << endl;
+            cout << endl;
+
             simpanFile();
             return;
         }
         bantu = bantu->next;
     }
-    cout << "Motor tidak ditemukan!\n";
+    cout << "Motor tidak ditemukan! " << endl;
 }
 
 void cariNama(){
@@ -227,7 +250,7 @@ void cariNama(){
 
     //sequential search
     while (bantu != NULL) {
-        if(strcmp(bantu->namaMtr, cari) == 0){
+        if(strcmpIgnoreCase(bantu->namaMtr, cari) == 0){
 
             cout << "\nMotor Berhasil Ditemukan!\n";
             cout << "======================================\n";
@@ -259,7 +282,7 @@ void cariPlat(){
     //sequential search
     while (bantu != NULL){
 
-        if(strcmp(bantu->plat, cari) == 0){
+        if(strcmpIgnoreCase(bantu->plat, cari) == 0){
 
             cout << "\nMotor Berhasil Ditemukan!\n";
             cout << "======================================\n";
@@ -412,7 +435,6 @@ int main() {
                     hapusData();
                     break;
                 case 3:
-                    // Kembali ke Menu Utama
                     break;
                 default:
                     cout << "Pilihan tidak valid!" << endl;
@@ -444,7 +466,6 @@ int main() {
                     kembaliMotor();
                     break;
                 case 3:
-                    // Kembali ke Menu Utama
                     break;
                     cout << endl;
                 default:
@@ -509,7 +530,6 @@ int main() {
                     break;
 
                 case 3:
-
                     break;
 
                 default:

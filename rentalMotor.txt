@@ -1,3 +1,4 @@
-Vario;AB2345JL;2009;65000;tersedia;-;0
+Vario;AB2345JL;2009;65000;disewa;Haidar;130000
 Honda Beat;AB3245CL;2008;60000;tersedia;-;0
-Vario 160;AD9875DW;2005;40000;tersedia;-;0
+Vario 160;AD9875DW;2005;40000;disewa;ahmad;120000
+ZX25 R;AB1234KL;2022;300000;tersedia;-;0
